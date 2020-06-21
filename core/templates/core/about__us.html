@@ -1,0 +1,73 @@
+{% extends 'core/base.html' %}
+{% load static globals_tags %}
+
+
+
+{% block content %}
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'img/bg_1.jpg' %});">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">О нас</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Главная <i class="ion-ios-arrow-forward"></i></a></span> <span>О нас <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include 'core/includes/mission_company.html' %}
+    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url({% static 'img/bg_5.jpg' %});" data-stellar-background-ratio="0.5">
+    	<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row justify-content-start">
+    			<div class="col-md-6 py-5 px-md-5">
+    				<div class="py-md-5">
+		          <div class="heading-section heading-section-white ftco-animate mb-5">
+		            <h2 class="mb-4">Остались вопросы?</h2>
+		            <p>Воспользуйтесь этой формой, опишите свой вопрос и персональный менеджер свяжется с вами</p>
+		          </div>
+		          <form action="#" class="appointment-form ftco-animate">
+		    				<div class="d-md-flex">
+			    				<div class="form-group">
+			    					<input type="text" class="form-control" placeholder="Имя">
+			    				</div>
+			    				<div class="form-group ml-md-4">
+			    					<input type="text" class="form-control" placeholder="Фамилия">
+			    				</div>
+		    				</div>
+		    				<div class="d-md-flex">
+		    					<div class="form-group">
+			    					<div class="form-field">
+		        					<div class="select-wrap">
+		                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+		                    <select name="" id="" class="form-control">
+		                    	<option class="select_callback_hp" value="">Вопрос о вакансии</option>
+		                      <option class="select_callback_hp" value="">Оформление документов</option>
+		                      <option class="select_callback_hp" value="">Получение визы</option>
+		                      <option class="select_callback_hp" value="">Трансфер</option>
+		                      <option class="select_callback_hp" value="">Другой вопрос</option>
+		                    </select>
+		                  </div>
+			              </div>
+			    				</div>
+		    					<div class="form-group ml-md-4">
+			    					<input type="text" class="form-control" placeholder="Телефон">
+			    				</div>
+		    				</div>
+		    				<div class="d-md-flex">
+		    					<div class="form-group">
+			              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Сообщение"></textarea>
+			            </div>
+			            <div class="form-group ml-md-4">
+			              <input type="submit" value="Отправить" class="btn btn-white py-3 px-4">
+			            </div>
+		    				</div>
+		    			</form>
+		    		</div>
+    			</div>
+        </div>
+    	</div>
+    </section>
+    {% include 'core/includes/comments.html' %}
+{% endblock %}

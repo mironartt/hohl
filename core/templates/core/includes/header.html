@@ -50,12 +50,12 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Главная</a></li>
+                <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Главная</a></li>
                 <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link">О нас</a></li>
-                <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Блог</a></li>
-                <li class="nav-item"><a href="{% url 'work_list' %}" class="nav-link">Вакансии</a></li>
                 <li class="nav-item"><a href="{% url 'why_international_work' %}" class="nav-link">Приемущества и гарантии</a></li>
+                <li class="nav-item"><a href="{% url 'work_list' %}" class="nav-link">Вакансии</a></li>
                 <li class="nav-item"><a href="{% url 'service' %}" class="nav-link">Услуги</a></li>
+                <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Блог</a></li>
                 <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Контакты</a></li>
             </ul>
         </div>
