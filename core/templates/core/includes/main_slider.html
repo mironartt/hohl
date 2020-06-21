@@ -1,1 +1,130 @@
-{% load static %}
+{% load static globals_tags %}
+
+<section class="home-slider owl-carousel">
+    <div class="slider-item" style="background-image:url({% static 'img/bg_1.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-start"
+                 data-scrollax-parent="true">
+                <div class="col-md-7 ftco-animate mb-md-5">
+                    <span class="subheading">Быстрое трудоустройство</span>
+                    <h1 class="mb-4">Работа в Европе - это просто</h1>
+                    <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider-item" style="background-image:url({% static 'img/bg_2.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-start"
+                 data-scrollax-parent="true">
+                <div class="col-md-7 ftco-animate mb-md-5">
+                    <span class="subheading">Устали от низкооплачиваемых вакансий</span>
+                    <h1 class="mb-4">Европейские зарплаты ждут вас</h1>
+                    <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Подробнее</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-consult">
+    <div class="container">
+        <div class="row d-flex no-gutters align-items-stretch	consult-wrap">
+            <div class="col-md-5 wrap-about align-items-stretch d-flex">
+                <div class="ftco-animate bg-primary align-self-stretch px-4 py-5 w-100">
+                    <h2 class="heading-white mb-4">Быстрый подбор вакансий</h2>
+                    <form action="#" class="appointment-form ftco-animate">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Имя">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Фамилия">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-field">
+                                <div class="select-wrap">
+                                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                    <select name="" id="" class="form-control">
+                                        <option class="select_callback_hp" value="">Выберите сферу</option>
+                                        <option class="select_callback_hp" value="">Транспорт</option>
+                                        <option class="select_callback_hp" value="">Строительство</option>
+                                        <option class="select_callback_hp" value="">Медицина</option>
+                                        <option class="select_callback_hp" value="">Авто</option>
+                                        <option class="select_callback_hp" value="">Обслуживания</option>
+                                        <option class="select_callback_hp" value="">Доставка</option>
+                                        <option class="select_callback_hp" value="">Рабочий персонал</option>
+                                        <option class="select_callback_hp" value="">IT</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <span class="text_callback_hp mr-5">Наличие высшего образования</span>
+                            <input type="checkbox" placeholder="Education">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Телефон">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="2" class="form-control"
+                                      placeholder="Дополнительная информация"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input data-toggle="modal" data-target="#great_click" type="submit" value="Отправить заявку"
+                                   class="btn btn-secondary py-3 px-4">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7 wrap-about ftco-animate align-items-stretch d-flex">
+                <div class="bg-white p-5">
+                    <h2 class="mb-4">Принцип <br>Подбора вакансий</h2>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="services">
+                                <div class="icon mt-2 d-flex align-items-center"><span
+                                        class="flaticon-collaboration"></span></div>
+                                <div class="text media-body">
+                                    <h3>Большое количество компаний партнеров</h3>
+                                    <p>Рассылаем Ваше резюме парнерам по всей Европе. Возможно трудоустройство и помощь
+                                        с переездом вам и вашей семье</p>
+                                </div>
+                            </div>
+                            <div class="services">
+                                <div class="icon mt-2"><span class="flaticon-analysis"></span></div>
+                                <div class="text media-body">
+                                    <h3>Большой выбор вакансий</h3>
+                                    <p>Мы помогаем устроиться абсолютно любому. Не важно, есть ли у вас высшее
+                                        образование.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="services">
+                                <div class="icon mt-2"><span class="flaticon-search-engine"></span></div>
+                                <div class="text media-body">
+                                    <h3>Высокий уровень оплаты труда</h3>
+                                    <p>Предлагаем работу, исходя исключительно из ваших предпочтений и зарплатных
+                                        ожиданий</p>
+                                </div>
+                            </div>
+                            <div class="services">
+                                <div class="icon mt-2"><span class="flaticon-handshake"></span></div>
+                                <div class="text media-body">
+                                    <h3>Официальное турдоустройство</h3>
+                                    <p>Трудоустройство официальное.Вы получите рабочую визу и все необходимые документы
+                                        для комфортной работы</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

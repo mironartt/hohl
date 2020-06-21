@@ -1,0 +1,262 @@
+{% load static globals_tags %}
+
+
+
+
+<div class="modal fade" id="invite_work" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title ">Заявка на подбор работы</h5>
+            </div>
+            <div class="modal-body style_modal_body">
+                <div class="mt-2 mb-5 d-flex " align="center">
+                    <h5>Заполните форму и начните искать Вам работу уже сейчас</h5>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <form class="row  justify-content-center" action="#" method="post" novalidate="novalidate">
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Имя">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Фамилия">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Номер телефона">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Email">
+                        </div>
+                        <div class="col-md-12 mb-3" align="center">
+                            <input type="text" placeholder="Город">
+                        </div>
+                        <div class="errors_list" id="errors_list_block" style="width: 100%" hidden>
+                        </div>
+                        <div id="nice_created_callbck" align="center" hidden>
+                            Заявка успешно создана. В ближайшее время менеджер свяжется с Вами.
+                        </div>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse" value="">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" class="btn btn-secondary style_modal_title">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="call_back" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title">Обратная связь</h5>
+            </div>
+            <div class="modal-body style_modal_body">
+                <div class="mt-2 mb-5" align="center">
+                    <h5>Заполните форму и мы незамедлительно Вам перезвоним</h5>
+                </div>
+                <div>
+                    <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <input type="text" hidden name="action_type" value="project_design">
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Имя">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Телефон">
+                        </div>
+                        <div class="errors_list" id="errors_list_block" align="center" style="width: 100%" hidden>
+                        </div>
+                        <div id="nice_created_callbck" align="center" hidden>
+                            Заявка успешно создана. В ближайшее время менеджер свяжется с Вами.
+                        </div>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse" value="">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" class="btn btn-secondary style_modal_title">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="instagram_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title " align="center">Для просмотра информации войдите в личный кабинет</h5>
+            </div>
+            <div class="modal-body style_modal_body">
+                <div class="mt-2 mb-5" align="center">
+                    <h5>Для авторизации введите следующие данные</h5>
+                </div>
+                <div>
+                    <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <input type="text" hidden name="action_type" value="project_design">
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Логин">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Пароль">
+                        </div>
+                        <div class="errors_list" id="errors_list_block" align="center" style="width: 100%" hidden>
+                        </div>
+                        <div id="nice_created_callbck" align="center" hidden>
+                            Заявка успешно создана. В ближайшее время менеджер свяжется с Вами.
+                        </div>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse" value="">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" class="btn btn-secondary style_modal_title">Войти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="work_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title " align="center">Для просмотра информации войдите в личный кабинет</h5>
+            </div>
+            <div class="modal-body style_modal_body">
+                <div class="mt-2 mb-5" align="center">
+                    <h5>Для авторизации введите следующие данные</h5>
+                </div>
+                <div>
+                    <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <input type="text" hidden name="action_type" value="project_design">
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Логин">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Пароль">
+                        </div>
+                        <div class="errors_list" id="errors_list_block" align="center" style="width: 100%" hidden>
+                        </div>
+                        <div id="nice_created_callbck" align="center" hidden>
+                            Заявка успешно создана. В ближайшее время менеджер свяжется с Вами.
+                        </div>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse" value="">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" class="btn btn-secondary style_modal_title">Войти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="great_click" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title ">Ваша заявка успешно отправлена</h5>
+            </div>
+            <div class="modal-body style_modal_body" align="center">
+                <div class="mt-2 mb-5">
+                    <h5>В скором времени менеджер с вами свяжется</h5>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" href="" class="btn btn-secondary style_modal_title">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sing_in" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title ">Вход в личный кабинет</h5>
+            </div>
+            <div class="modal-body style_modal_body">
+                <div class="mt-2 mb-5" align="center">
+                    <h5>Для авторизации введите следующие данные</h5>
+                </div>
+                <div>
+                    <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <input type="text" hidden name="action_type" value="project_design">
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Логин">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Пароль">
+                        </div>
+                        <div class="errors_list" id="errors_list_block" align="center" style="width: 100%" hidden>
+                        </div>
+                        <div id="nice_created_callbck" align="center" hidden>
+                            Заявка успешно создана. В ближайшее время менеджер свяжется с Вами.
+                        </div>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse" value="">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" class="btn btn-secondary style_modal_title">Войти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="sing_up" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center style_modal_title">
+                <h5 class="modal-title ">Регистрация</h5>
+            </div>
+            <div class="modal-body style_modal_body">
+                <div class="mt-2 mb-5 d-flex " align="center">
+                    <h5>Заполните форму и начните пользоваться нашим сервисом на все 100%</h5>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <form class="row  justify-content-center" action="#" method="post" novalidate="novalidate">
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Имя">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Фамилия">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Номер телефона">
+                        </div>
+                        <div class="col-lg-12 mb-3" align="center">
+                            <input type="text" placeholder="Email">
+                        </div>
+                        <div class="col-md-12 mb-3" align="center">
+                            <input type="text" placeholder="Город">
+                        </div>
+                        <div class="errors_list" id="errors_list_block" style="width: 100%" hidden>
+                        </div>
+                        <div id="nice_created_callbck" align="center" hidden>
+                            Заявка успешно создана. В ближайшее время менеджер свяжется с Вами.
+                        </div>
+                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse" value="">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center style_modal_body">
+                <button type="submit" class="btn btn-secondary style_modal_title">Зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+
+</div>

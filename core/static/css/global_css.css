@@ -1,0 +1,70 @@
+.navbar_txt {
+    white-space: normal;
+}
+
+.nav_li_invite {
+    padding-left: 30%;
+}
+
+
+.button_invite_nav {
+    height: 54px;
+    margin: 5px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid white;
+    width: 100%;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    border-radius: 30px;
+}
+
+
+.hex {
+    height: 52px !important;
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 18px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.select_callback_hp {
+    background-color: #0b3bff
+}
+
+
+.text_callback_hp {
+    color: #fff;
+    font-size: 16px;
+}
+
+.text_callback_hp .input {
+    margin-left: 40px;
+}
+
+.navbar_button {
+    color: #000000;
+}
+
+.style_modal_title {
+    background-color: #fa5c20 ;
+}
+.contact_inform1 {
+    color: #0b0b0b;
+    font-size: 35px;
+}
+.contact_inform {
+    color: #0b0b0b;
+}
+
+.style_modal_body {
+    background-color: #3e64ff;
+}
+.form_margin {
+    margin-bot: 10px;
+
+}

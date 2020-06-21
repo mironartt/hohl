@@ -8,12 +8,12 @@ from .views import index
 
 urlpatterns = [
     path('', index.IndexView.as_view(), name='index'),
-    # path('remind-password/<str:remind_password_code>/', index.RemindPasswordInputView.as_view(), name='remind_password_input'),
-    # path('remind-password/', index.RemindPasswordView.as_view(), name='remind_password'),
-    # path('singin/', index.SingInView.as_view(), name='singin'),
-    # path('singup/', index.SingUpView.as_view(), name='singup'),
-    # path('lk/', index.UserLkView.as_view(), name='user_lk'),
-    # path('blog/<str:post_slug>/', index.PostView.as_view(), name='post'),
-    # path('blog/', index.PostListView.as_view(), name='post_list'),
+    path('about-us/', index.AboutUsView.as_view(), name='about_us'),
+    path('blog-single/', index.BlogSingleView.as_view(), name='blog_single'),
+    path('contact/', index.ContactView.as_view(), name='contact'),
+    path('service/', index.ServiceView.as_view(), name='service'),
+    path('why-international-work/', index.WhyIntView.as_view(), name='why_international_work'),
+    path('work-list/', index.WorkListView.as_view(), name='work_list'),
+    path('blog/', index.BlogView.as_view(), name='blog'),
     # path('logout/', index.LogoutView.as_view(), name='logout'),
 ]
