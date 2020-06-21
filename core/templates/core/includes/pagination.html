@@ -1,0 +1,27 @@
+{% load static %}
+{% if paginator.num_pages > 1 %}
+    <div class="pages {{ pages_class }}">
+        <ul>
+            {% if rows.has_previous %}
+                <li><a href="{{ request.path }}?page={{ rows.previous_page_number }}{% if getvars %}{{ getvars }}{% endif %}"><img src="{% static 'img/blog/blog-left-arrow.png' %}"></a></li>
+            {% endif %}
+
+            {% for page in paginator.page_range %}
+                {% if page == rows.number %}
+                    <li><span>{{ page }}</span></li>
+                {% elif page >= rows.number|add:"-1" and page <= rows.number|add:"1" or page <= 2 or page > paginator.num_pages|add:"-2" %}
+                    <li><a href="{{ request.path }}?page={{ page }}{% if getvars %}{{ getvars }}{% endif %}">{{ page }}</a></li>
+                {% elif page == 4 and rows.number > 1 %}
+                    <li>...</li>
+                {% elif page == paginator.num_pages|add:"-2" %}
+                    <li>...</li>
+                {% endif %}
+            {% endfor %}
+
+            {% if rows.has_next %}
+                <li><a href="{{ request.path }}?page={{ rows.next_page_number }}{% if getvars %}{{ getvars }}{% endif %}"><img src="{% static 'img/blog/blog-right-arrow.png' %}"></a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+{% endif %}

@@ -1,0 +1,43 @@
+{% load globals_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>{% block title %}Title{% endblock %}</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}?{{ ver_css }}" rel="stylesheet"/>
+    <link href="{% static 'css/bootstrap-select.min.css' %}?{{ ver_css }}" rel="stylesheet"/>
+    <link href="{% static 'css/bootstrap-grid.min.css' %}?{{ ver_css }}" rel="stylesheet"/>
+    <link href="{% static 'css/bootstrap-reboot.min.css' %}?{{ ver_css }}" rel="stylesheet"/>
+    <link href="{% static 'css/globals.css' %}?{{ ver_css }}" rel="stylesheet"/>
+    <link href="{% static 'css/base.css' %}?{{ ver_css }}" rel="stylesheet"/>
+
+    <script type="text/javascript" defer src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" defer src="{% static 'js/jquery-migrate-3.0.0.min.js' %}"></script>
+    <script type="text/javascript" defer src="{% static 'js/popper.min.js' %}?{{ ver_css }}"></script>
+    <script type="text/javascript" defer src="{% static 'js/bootstrap.min.js' %}?{{ ver_css }}"></script>
+    <script type="text/javascript" defer src="{% static 'js/bootstrap-select.min.js' %}?{{ ver_css }}"></script>
+    <script type="text/javascript" defer src="{% static 'js/bootstrap.bundle.min.js' %}?{{ ver_css }}"></script>
+
+    <script type="text/javascript" defer src="{% static 'js/globals.js' %}?{{ ver_css }}"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body >
+    {% include 'core/includes/header.html' %}
+    <div class="main-content" style="" align="center">
+        {% csrf_token %}
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    {% include 'core/includes/footer.html' %}
+</body>
+
+
+
+</html>

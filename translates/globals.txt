@@ -1,0 +1,53 @@
+ru:Имя|en:First Name|
+ru:Фамилия|en:Last Name|
+ru:Страна|en:Country|
+ru:Индекс|en:Post code|
+ru:Телефон|en:Phone|
+ru:Адрес|en:Address|
+ru:Город|en:City|
+ru:Украина|en:Ukraine|
+ru:Россия|en:Russia|
+ru:Беларусь|en:Belarus|
+ru:Ссылка на facebook|en:Link to facebook|
+ru:Ссылка на instagram|en:Link to instagram|
+ru:Аккаунт в социальных сетях|en:Social media account|
+ru:зарегистрироваться|en:register|
+ru:Аккаунт в youtube|en:Youtube account|
+ru:Авторизоваться|en:Authorize|
+ru:Войти|en:login|
+ru:Регистрация|en:Registration|
+ru:Корзина|en:Shopping cart|
+ru:Аккаунт в facebook|en:Facebook account|
+ru:Аккаунт в instagram|en:Instagram account|
+ru:Выбрать язык|en:Select a language|
+ru:войти|en:enter|
+ru:Забыли Пароль|en:Forgot Your Password|
+ru:Пароль|en:Password|
+ru:Повторите пароль|en:Repeat password|
+ru:Введите правильный URL.|en:Enter the correct URL.|
+ru:введённый пароль состоит только из цифр.|en:the entered password consists only of digits.|
+ru:введённый пароль слишком широко распространён.|en:the password you entered is too common.|
+ru:введённый пароль слишком короткий. он должен содержать как минимум 8 символов.|en:the password you entered is too short. it must contain at least 8 characters|
+ru:введенные пароли не совпадают!|en:the passwords you entered don't match!|
+ru:указанный телефон слишком короткий|en:the specified phone number is too short|
+ru:пользователь с таким адресом электронной почты уже существует.|en:a user with this email address already exists|
+ru:указанный пользователь не найден, либо неверный пароль, либо email не был подтвержден|en:the specified user was not found, or the password was incorrect, or the email address was not confirmed|
+ru:email не был подтвержден|en:Email was not confirmed|
+ru:новый пароль|en:new password|
+ru:сменить пароль|en:change password|
+ru:Восстановление пароля|en:Password recovery|
+ru:повторите новый пароль|en:repeat the new password|
+ru:Личный кабинет|en:Personal account|
+ru:пользователь с таким адресом электронной почты не найден.|en:the user with this email address was not found.|
+ru:введите правильный адрес электронной почты.|en:enter the correct email address.|
+ru:Для завершения востановления пароля пройдите по ссылке|en:To complete password recovery|
+ru:которую мы отправили на указанный вами email|en:follow the link that we sent to your email address|
+ru:С любовью, команда Magirani|en:With love, Magirani team|
+ru:Зпрос уже был принят|en:The request has already been accepted|
+ru:Повторная отправка не ранее чем через|en:Re-sending no earlier than|
+ru:восстановить|en:recover|
+ru:Главная|en:Main page|
+ru:Блог|en:Blog|
+ru:первичная консультация|en:initial consultation|
+ru:заказать|en:order|
+ru:мин|en:min|

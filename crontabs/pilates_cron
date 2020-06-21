@@ -1,0 +1,1 @@
+*	*	*	*	* cd /home/hohl/www/hohl.com/www/hohl/ && /home/hohl/www/hohl.com/venv/bin/python /home/hohl/www/hohl.com/www/manage.py send_mail
