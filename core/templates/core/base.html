@@ -37,7 +37,12 @@
 </head>
 <body>
 {% include 'core/includes/header.html' %}
-
+<div type="button" class="callback-bt" data-toggle="modal" data-target="#call_back">
+    <div class="text-call">
+        <i class="ion-ios-call"></i>
+        <span>Заказать<br>звонок</span>
+    </div>
+</div>
 <div class="main-content" style="" align="center">
     {% csrf_token %}
     {% block content %}
