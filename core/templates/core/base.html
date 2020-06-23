@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
     <title>{% block title %}Title{% endblock %}</title>
-
+    <meta name="description" content="{% block description %} {% endblock %}">
+    <meta name="Keywords" content="{% block keywords %} {% endblock %}">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 
 
@@ -36,7 +37,8 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-{% include 'core/includes/header.html' %}
+{% block navbar %}{% include 'core/includes/header.html' with active_tab='main' %}{% endblock %}
+
 <div type="button" class="callback-bt" data-toggle="modal" data-target="#call_back">
     <div class="text-call">
         <i class="ion-ios-call"></i>
@@ -51,6 +53,7 @@
 
     {% endblock %}
 </div>
+
 {% include 'core/includes/footer.html' %}
 {% include 'core/includes/modals.html' %}
 
