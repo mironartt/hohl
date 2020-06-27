@@ -18,7 +18,7 @@ from dateutil.parser import parse
 from core.utils.text import check_languages_path, get_confirm_code
 from core.utils.mails import send_confirm_code
 
-from core.models import Post, Images, User
+from core.models import Post, Images, User, Vacancy
 from core.forms.site_form import CustomUserCreationForm, CustomAuthenticationForm, RemindPasswordInputForm, \
     RemindPasswordForm
 
@@ -49,9 +49,28 @@ class ContactView(generic.View):
 class WorkListView(generic.View):
 
     template_name = 'core/work_list.html'
+    per_page = 6
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, )
+        vacansies = Vacancy.objects.filter(
+            availavled=True,
+        ).order_by('-priority', '-date_created')
+
+        paginator = Paginator(vacansies, self.per_page)
+        if paginator.count:
+            page = self.request.GET.get('page')
+            try:
+                vacansies = paginator.page(page)
+            except PageNotAnInteger:
+                vacansies = paginator.page(1)
+            except EmptyPage:
+                raise Http404('Error EmptyPage')
+
+        context = {
+            'paginator': paginator,
+            'vacansies': vacansies,
+        }
+        return render(request, self.template_name, context)
 
 class WhyIntView(generic.View):
 
@@ -68,17 +87,51 @@ class ServiceView(generic.View):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, )
 
+
 class BlogSingleView(generic.View):
 
     template_name = 'core/blog_single.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            self.post = Post.objects.get(slug=kwargs.get('post_slug'))
+        except Post.DoesNotExist:
+            raise Http404('Post object not find')
+        except Post.MultipleObjectsReturned:
+            self.post = Post.objects.filter(slug=kwargs.get('post_slug')).first()
+            if self.post is None:
+                raise Http404('Post object not find after MultipleObjectsReturned')
+        return super(BlogSingleView, self).dispatch(request, *args, **kwargs)
+
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, )
+        context = {
+            'post': self.post,
+        }
+        return render(request, self.template_name, context)
 
 
 class BlogView(generic.View):
 
     template_name = 'core/blog.html'
+    per_page = 6
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name, )
+        posts = Post.objects.filter(
+            availavled=True,
+        ).order_by('-priority', '-date_created')
+
+        paginator = Paginator(posts, self.per_page)
+        if paginator.count:
+            page = self.request.GET.get('page')
+            try:
+                posts = paginator.page(page)
+            except PageNotAnInteger:
+                posts = paginator.page(1)
+            except EmptyPage:
+                raise Http404('Error EmptyPage')
+
+        context = {
+            'paginator': paginator,
+            'posts': posts,
+        }
+        return render(request, self.template_name, context)

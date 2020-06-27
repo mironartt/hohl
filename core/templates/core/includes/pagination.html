@@ -1,9 +1,9 @@
 {% load static %}
 {% if paginator.num_pages > 1 %}
-    <div class="pages {{ pages_class }}">
+    <div class="block-27 {{ pages_class }}">
         <ul>
             {% if rows.has_previous %}
-                <li><a href="{{ request.path }}?page={{ rows.previous_page_number }}{% if getvars %}{{ getvars }}{% endif %}"><img src="{% static 'img/blog/blog-left-arrow.png' %}"></a></li>
+                <li><a href="{{ request.path }}?page={{ rows.previous_page_number }}{% if getvars %}{{ getvars }}{% endif %}">&lt;</a></li>
             {% endif %}
 
             {% for page in paginator.page_range %}
@@ -19,7 +19,7 @@
             {% endfor %}
 
             {% if rows.has_next %}
-                <li><a href="{{ request.path }}?page={{ rows.next_page_number }}{% if getvars %}{{ getvars }}{% endif %}"><img src="{% static 'img/blog/blog-right-arrow.png' %}"></a></li>
+                <li><a href="{{ request.path }}?page={{ rows.next_page_number }}{% if getvars %}{{ getvars }}{% endif %}">&gt;</a></li>
             {% endif %}
 
         </ul>

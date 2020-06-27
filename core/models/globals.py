@@ -53,6 +53,15 @@ class User(AbstractUser):
         return '%s: %s' % (self.id, self.username)
 
 
+class Tags(models.Model):
+
+    class Meta:
+        verbose_name = 'Тэг'
+        verbose_name_plural = 'Тэги'
+
+    title = models.CharField(max_length=500, verbose_name='Тэг', null=True, blank=True)
+
+
 class Post(models.Model):
 
     class Meta:
@@ -61,15 +70,16 @@ class Post(models.Model):
 
     main_image = models.ForeignKey(Images, on_delete=models.CASCADE, verbose_name='Главное изображение поста')
     slug = models.SlugField(verbose_name='Слаг поста (url адрес)', blank=True, null=True)
-    title = models.CharField(max_length=500, verbose_name='Заголовок RU', null=True, blank=True)
+    title = models.CharField(max_length=500, verbose_name='Заголовок', null=True, blank=True)
     short_description = models.CharField(max_length=500, verbose_name='Краткое описание RU', null=True, blank=True)
     body = RichTextUploadingField(verbose_name='Текс на главной странице RU', null=True, blank=True)
+    count_views = models.IntegerField(default=10, verbose_name='Количество просмотров')
     priority = models.IntegerField(default=10, verbose_name='Приоритет в сортировке')
     availavled = models.BooleanField(default=True, verbose_name='Отображать на сайте')
+    tags = models.ManyToManyField(Tags, related_name='posts', verbose_name='Тэги', blank=True)
 
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
-    need_sending = models.BooleanField(default=True, verbose_name='Необходимо ли разослать подписчикам уведомление')
 
     def __str__(self):
         return '({0}) {1}'.format(self.id, self.title)
@@ -82,6 +92,42 @@ class Post(models.Model):
             slug = slugify(
                 translit(title if title else ''.join(random.choice(string.ascii_lowercase) for _ in range(4))))
         if Post.objects.filter(slug=slug).exclude(id=self.id):
+            slug = '%s_%s' % (slug, self.id)
+        if self.slug != slug:
+            self.slug = slug
+            self.save()
+
+
+class Vacancy(models.Model):
+
+    class Meta:
+        verbose_name = 'Вакансия'
+        verbose_name_plural = 'Вакансии'
+
+    main_image = models.ForeignKey(Images, on_delete=models.CASCADE, verbose_name='Главное изображение вакансии')
+    slug = models.SlugField(verbose_name='Слаг вакансии (url адрес)', blank=True, null=True)
+    title = models.CharField(max_length=500, verbose_name='Заголовок', null=True, blank=True)
+    short_description = RichTextUploadingField(verbose_name='Краткое описание RU (сохраняет форматирование строк)', null=True, blank=True)
+    body = RichTextUploadingField(verbose_name='Текс на главной странице RU', null=True, blank=True)
+    count_views = models.IntegerField(default=10, verbose_name='Количество просмотров')
+    priority = models.IntegerField(default=10, verbose_name='Приоритет в сортировке')
+    availavled = models.BooleanField(default=True, verbose_name='Отображать на сайте')
+    tags = models.ManyToManyField(Tags, related_name='vacansies', verbose_name='Тэги', blank=True)
+
+    date_created = models.DateTimeField(auto_now_add=True, verbose_name='Создан')
+    date_updated = models.DateTimeField(auto_now=True, verbose_name='Обновлен')
+
+    def __str__(self):
+        return '({0}) {1}'.format(self.id, self.title)
+
+    def save(self, *args, **kwargs):
+        super(Vacancy, self).save(*args, **kwargs)
+        slug = self.slug
+        if not slug:
+            title = '_'.join(self.title.split(' ')[:4]) if self.title else None
+            slug = slugify(
+                translit(title if title else ''.join(random.choice(string.ascii_lowercase) for _ in range(4))))
+        if Vacancy.objects.filter(slug=slug).exclude(id=self.id):
             slug = '%s_%s' % (slug, self.id)
         if self.slug != slug:
             self.slug = slug
