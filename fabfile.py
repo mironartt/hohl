@@ -18,7 +18,7 @@ def deploy(git_push=0):
         local('git push origin master')
         print('============================================== NICE GIT push')
 
-    with settings(user=d_settings.PROJECT_NAME):
+    with settings(user=local_settings.PROJECT_NAME):
         with cd(project_dir):
             run('git pull origin master')
             print('============================================== NICE GIT pull')
