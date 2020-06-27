@@ -9,8 +9,8 @@ servers = {
 }
 env.roledefs.update(servers)
 
-project_dir = '/home/{project_name}/www/{site_name}/www'.format(project_name=local_settings.PROJECT_NAME, site_name=local_settings.SITE_NAME)
-venv_dir = '/home/{project_name}/www/{site_name}/venv'.format(project_name=local_settings.PROJECT_NAME, site_name=local_settings.SITE_NAME)
+project_dir = '/home/myuser/hohl/www'
+venv_dir = '/home/myuser/hohl/venv'
 
 @roles('production')
 def deploy(git_push=0):
