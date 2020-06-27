@@ -30,7 +30,7 @@ class PostAdmin(admin.ModelAdmin):
 
     save_on_top = True
     list_display = ('id', 'show_image', 'get_slug', 'title', 'short_description', 'get_short_body', 'date_created', 'availavled',)
-    readonly_fields = ['show_image', 'date_created', 'get_slug']
+    readonly_fields = ['show_image', 'get_slug']
     search_fields = ('body', 'title', 'short_description')
 
     def show_image(self, obj):
@@ -55,7 +55,7 @@ class VacancyAdmin(admin.ModelAdmin):
 
     save_on_top = True
     list_display = ('id', 'show_image', 'get_slug', 'title', 'get_short_body', 'date_created', 'availavled',)
-    readonly_fields = ['show_image', 'date_created', 'get_slug']
+    readonly_fields = ['show_image', 'get_slug']
     search_fields = ('body', 'title', 'short_description')
 
     def show_image(self, obj):
