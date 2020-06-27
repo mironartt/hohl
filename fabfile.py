@@ -1,5 +1,4 @@
 import os
-from django.conf import settings as d_settings
 from fabric.api import local, run, env, execute, sudo, cd, settings, task, roles
 from core.utils.globals import write_css_version
 from hohl import local_settings

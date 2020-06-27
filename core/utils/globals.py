@@ -1,6 +1,5 @@
 import os
 import time
-from django.conf import settings
 from hohl import local_settings
 
 def get_css_version():
