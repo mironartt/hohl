@@ -28,7 +28,7 @@ def deploy(git_push=0):
             print('============================================== NICE migrate')
             run('%s/bin/python manage.py collectstatic --noinput' % (venv_dir))
             print('============================================== NICE collectstatic')
-            run('%s/bin/fab update_static_ver' % (venv_dir))
+            run('%s/bin/python manage.py update_static_ver' % (venv_dir))
             print('============================================== NICE update_static_ver')
     print(('='*100 + '\n')*4)
     print('FINISH')
